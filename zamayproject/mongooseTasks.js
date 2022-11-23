@@ -1,17 +1,14 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1/test')
+mongoose.connect('mongodb://127.0.0.1:27017/test1')
+var Zamay = require("./models/zamay").Zamay
 
-var schema = mongoose.Schema({ name: String })
-
-schema.methods.meow = function(){
-    console.log(this.get("name") + " сказал мурррр")
-}
-
-var Cat = mongoose.model('Zamay', schema)
-
-var kitty = new Cat({ name: 'Садист' })
-kitty.save(function (err) {
-    kitty.meow()
+var zamay = new Zamay({
+    title: "Виктор",
+    nick: "Sadist"
 })
 
-//Вообще, я сильно извиняюсь что не поменял все котовые темы на свои, но уж как получается, теперь не вижу смысла останавливаться на полпути :'(
+console.log(zamay)
+zamay.save(function(err, zamay, affected){
+console.log(zamay.title)
+})
+
