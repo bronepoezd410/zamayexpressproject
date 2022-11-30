@@ -1,6 +1,5 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-
 var zamaySchema = new Schema({
 title: String,
 nick: {

@@ -15,6 +15,12 @@ var data = [{
     nick: 'SlavaKarelin',
     avatar: '/images/slava4.jpg',
     desc: 'Родился в Хабаровске, переехал в Санкт-Петербург, где проживает до сих пор.'
+    }, 
+    {
+    title: 'Виктор Садист',
+    nick: 'VictorSadist',
+    avatar: '/images/slava4.jpg',
+    desc: 'Да, это определенно он',
     }
     ];
     
