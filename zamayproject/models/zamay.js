@@ -15,3 +15,4 @@ default:Date.now
 }
 })
 module.exports.Zamay = mongoose.model("Zamay", zamaySchema)
+//

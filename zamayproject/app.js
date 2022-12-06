@@ -13,7 +13,7 @@ var zamays = require('./routes/zamays');
 var app = express();
 
 // view engine setup
-
+//
 // view engine setup
 app.engine('ejs',require('ejs-locals'));
 
