@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
     req.session.greeting = "Hi!!!"
     res.render('index', {
         title: "Zamay",
-        menu: menu,
         counter: req.session.counter
   });
 })
