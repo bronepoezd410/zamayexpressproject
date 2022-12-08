@@ -4,8 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1/zamay');
+mongoose.connect('mongodb://127.0.0.1/zamayproject');
 var session = require("express-session");
+var MongoStore = require('connect-mongo');(session);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,14 +24,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-var MongoStore = require('connect-mongo')(session);
 app.use(session({
   secret: "ZamayProject",
   cookie:{maxAge:60*1000},
   resave: true,
   saveUninitialized: true,
-  store: MongoStore.create({mongoUrl: 'mongodb://localhost/zamays'})
+  store: MongoStore.create({mongoUrl: 'mongodb://127.0.0.1/zamayproject'})
 }))
 app.use(function(req,res,next){
   req.session.counter = req.session.counter +1 || 1
